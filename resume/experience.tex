@@ -27,17 +27,14 @@
         \item {
           \textbf{Nested Resiliency}: Implemented driver support for deploying and managing virtual
           disks with node-mirrored mirror and node-mirrored parity resiliency configurations to
-          enable virtual disks to tolerate 1 node + 1 drive failures on 2-node Storage Spaces
-          Direct (S2D) clusters.
+          enable virtual disks to tolerate 1 node + 1 drive failures on 2-node S2D clusters vs. the
+          typical 1 node fault tolerance in order to further reduce the propensity for virtual disk
+          downtime on 2-node S2D clusters.
         }
         \item {
           \textbf{Diskstream}: Implemented a .NET Standard dynamic-link library (DLL) in C\# to
-          enable the HoloLens 2 emulator to modify the virtual machine disk image in user mode
-          without requiring the disk image to be mounted on the host operating system.
-        }
-        \item {
-          \textbf{Refdisk}: Prototyped an internal disk reflector driver to enable an arbitrary
-          data store (e.g., file) to be mounted as a disk device on Windows.
+          enable the HoloLens 2 emulator to modify the virtual machine disk image in a user mode
+          sandbox without requiring the disk image to be mounted on the host operating system.
         }
       \end{cvitems}
     }
