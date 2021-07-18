@@ -1,0 +1,43 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Experience}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cventry
+    {Software Engineer II - Windows Storage Spaces Dev Team} % Job title
+    {Microsoft Corporation} % Organization
+    {Redmond, WA, USA} % Location
+    {Sep. 2015 - Present} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item {
+          \textbf{Granular Repair}: Optimized in-place virtual disk repair (resilvering) on Storage
+          Spaces Direct (S2D) clusters by implementing driver and metadata support for tracking
+          stale data copies at stripe granularity (e.g., 256 KiB) vs. extent granularity (e.g.,
+          1 GiB), which led to an order of magnitude reduction in runtimes (e.g., from hours to
+          minutes).
+        }
+        \item {
+          \textbf{Nested Resiliency}: Implemented driver support for deploying and managing virtual
+          disks with node-mirrored mirror and node-mirrored parity resiliency configurations to
+          enable virtual disks to tolerate 1 node + 1 drive failures on 2-node Storage Spaces
+          Direct (S2D) clusters.
+        }
+        \item {
+          \textbf{Diskstream}: Implemented a .NET Standard dynamic-link library DLL in C\# to
+          enable the HoloLens 2 emulator to modify the virtual machine disk image in user mode
+          without requiring the disk image to be mounted on the host operating system.
+        }
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+
+\end{cventries}
