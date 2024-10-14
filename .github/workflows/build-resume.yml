@@ -1,0 +1,16 @@
+name: Build Resume
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:TL2023-historic
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+    - name: Compile
+      run: xelatex resume.tex
+    - name: Upload Artifact(s)
+      uses: actions/upload-artifact@v4
+      with:
+        name: resume
+        path: resume.pdf
