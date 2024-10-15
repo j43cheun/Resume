@@ -16,11 +16,11 @@ jobs:
         path: resume.pdf
     - name: "Generate build tag"
       run: |
-        echo "tag="resume-$(date +'%Y-%m-%d-%H%M')"" >> $GITHUB_OUTPUT
+        echo "tag="resume-$(date +'%Y-%m-%d-%H%M').pdf"" >> $GITHUB_OUTPUT
       id: version
     - name: "Rename file"
       run: |
-        mv resume.pdf ${{ steps.version.outputs.tag }}.pdf
+        mv resume.pdf ${{ steps.version.outputs.tag }}
     - name: Release
       uses: softprops/action-gh-release@v2
       if: github.ref == 'refs/heads/main'
@@ -28,4 +28,4 @@ jobs:
         tag_name: ${{ steps.version.outputs.tag }}
         name: ${{ steps.version.outputs.tag }}
         files: |
-          ${{ steps.version.outputs.tag }}.pdf
+          ${{ steps.version.outputs.tag }}
