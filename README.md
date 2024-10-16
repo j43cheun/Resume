@@ -1,4 +1,7 @@
 # Resume
+This repo contains the LaTeX files for my resume. It uses the
+[Awesome-CV](https://github.com/posquit0/Awesome-CV) LaTeX template from
+[posquit0](https://github.com/posquit0).
 
 ## Build
 This repo defines a GitHub workflow for building and releasing the resume PDF
@@ -6,6 +9,12 @@ This repo defines a GitHub workflow for building and releasing the resume PDF
 A commit to the [`main`](https://github.com/j43cheun/Resume/tree/main) branch
 will automatically trigger a build and release of a resume PDF based on the
 resume contents at the time of commit.
+
+<div>
+  <a href="https://github.com/j43cheun/Resume/actions/workflows/build-resume.yml">
+    <img alt="GitHub Actions" src="https://github.com/j43cheun/Resume/actions/workflows/build-resume.yml/badge.svg" />
+  </a>
+</div>
 
 ### Local Build (Ubuntu)
 > [!TIP]
