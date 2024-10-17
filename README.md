@@ -35,3 +35,15 @@ The generated file will be output to the repo's root directory.
 ```bash
 xelatex resume.tex
 ```
+
+### Local Build (macOS)
+
+#### Setup
+Install [MacTex](https://www.tug.org/mactex/mactex-download.html).
+
+#### Build
+Run the `xelatex` command from the repo's root directory to build `resume.pdf`.
+The generated file will be output to the repo's root directory.
+```bash
+xelatex resume.tex
+```
