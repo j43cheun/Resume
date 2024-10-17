@@ -10,30 +10,38 @@
 \begin{cventries}
 
   \cventry
-    {Senior Software Engineer - Storage Spaces Dev Team} % Job title
+    {Senior Software Engineer - Hyper-V Virtualization Infrastructure Services Team} % Job title
     {Microsoft Corporation} % Organization
     {Redmond, WA, USA} % Location
-    {Sep. 2015 - Present} % Date(s)
+    {Jan. 2022 - Present} % Date(s)
+    {
+    }
+
+  \cventry
+    {Software Engineer II - Storage Spaces Dev Team} % Job title
+    {Microsoft Corporation} % Organization
+    {Redmond, WA, USA} % Location
+    {Sep. 2015 - Jan. 2022} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
         \item {
-          \textbf{Granular Repair}: Optimized in-place virtual disk repair (resilvering) on Storage
-          Spaces Direct (S2D) clusters by implementing driver and metadata support for tracking
-          stale data copies at stripe unit granularity (e.g., 256 KiB) vs. extent granularity
-          (e.g., 1 GiB), which led to an order of magnitude reduction in runtimes (e.g., from hours
-          to minutes).
+          Optimized Storage Spaces Repair (i.e., RAID resilvering) by enhancing Storage
+          Spaces metadata to track stale logical data copies at stripe granularity
+          (i.e., 256 KiB) vs. extent granularity (i.e., 256 MiB) previously, which
+          reduced the run time of Storage Spaces Repair from hours to minutes.
         }
         \item {
-          \textbf{Multilevel Resiliency}: Implemented driver support for deploying and managing virtual
-          disks with node-mirrored mirror and node-mirrored parity resiliency configurations to
-          enable virtual disks to tolerate 1 node + 1 drive failures on 2-node S2D clusters vs. the
-          typical 1 node fault tolerance in order to further reduce the propensity for virtual disk
-          downtime on 2-node S2D clusters.
+          Implemented Storage Spaces support for configuring, deploying, and managing
+          Storage Spaces with node-mirrored mirror and node-mirrored parity multilevel
+          resiliency settings on 2-node Storage Spaces Direct (S2D) Failover Clusters,
+          which enabled Storage Spaces on 2-node S2D Failover Clusters to tolerate 1
+          node + 1 drive failures vs. 1 node failure previously.
         }
         \item {
-          \textbf{Diskstream}: Implemented a .NET Standard dynamic-link library (DLL) in C\# to
-          enable the HoloLens 2 emulator to modify the virtual machine disk image in user mode
-          without requiring the virtual disk image to be mounted on the host operating system.
+          Designed and implemented an extra-resilient cache for staging writes to
+          Storage Space ranges backed by a suboptimal number of logical copies to
+          enable write forward progress without compromising on redundancy and risking
+          data loss.
         }
       \end{cvitems}
     }
