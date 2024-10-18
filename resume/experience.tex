@@ -9,42 +9,54 @@
 %-------------------------------------------------------------------------------
 \begin{cventries}
 
-  \cventry
-    {Senior Software Engineer - Hyper-V Virtualization Infrastructure Services Team} % Job title
-    {Microsoft Corporation} % Organization
-    {Redmond, WA, USA} % Location
-    {Jan. 2022 - Present} % Date(s)
-    {
-    }
-
-  \cventry
-    {Software Engineer II - Storage Spaces Dev Team} % Job title
-    {Microsoft Corporation} % Organization
-    {Redmond, WA, USA} % Location
-    {Sep. 2015 - Jan. 2022} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {
-          Optimized Storage Spaces Repair (i.e., RAID resilvering) by enhancing Storage
-          Spaces metadata to track stale logical data copies at stripe granularity
-          (i.e., 256 KiB) vs. extent granularity (i.e., 256 MiB) previously, which
-          reduced the run time of Storage Spaces Repair from hours to minutes.
-        }
-        \item {
-          Implemented Storage Spaces support for configuring, deploying, and managing
-          Storage Spaces with node-mirrored mirror and node-mirrored parity multilevel
-          resiliency settings on 2-node Storage Spaces Direct (S2D) Failover Clusters,
-          which enabled Storage Spaces on 2-node S2D Failover Clusters to tolerate 1
-          node + 1 drive failures vs. 1 node failure previously.
-        }
-        \item {
-          Designed and implemented an extra-resilient cache for staging writes to
-          Storage Space ranges backed by a suboptimal number of logical copies to
-          enable write forward progress without compromising on redundancy and risking
-          data loss.
-        }
-      \end{cvitems}
-    }
+  \cventrytwopositions
+  {Software Engineer II - Storage Spaces Dev Team} % Job title 1
+  {Microsoft Corporation} % Organization
+  {Redmond, WA, USA} % Location
+  {Sep. 2015 - Jan. 2022} % Date(s) for Job title 1
+  {
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+      \item {
+        Optimized Storage Spaces Repair (i.e., RAID resilvering) by enhancing Storage
+        Spaces metadata to track stale logical data copies at stripe granularity
+        (i.e., 256 KiB) vs. extent granularity (i.e., 256 MiB) previously, which
+        reduced the run time of Storage Spaces Repair from hours to minutes.
+      }
+      \item {
+        Implemented Storage Spaces support for configuring, deploying, and managing
+        Storage Spaces with node-mirrored mirror and node-mirrored parity multilevel
+        resiliency settings on 2-node Storage Spaces Direct (S2D) Failover Clusters,
+        which enables Storage Spaces on 2-node S2D Failover Clusters to tolerate 1
+        node + 1 drive failures vs. 1 node failure previously.
+      }
+      \item {
+        Designed and implemented an extra-resilient cache for staging writes to
+        Storage Space ranges backed by a suboptimal number of logical copies to
+        enable write forward progress without compromising on redundancy and risking
+        data loss.
+      }
+    \end{cvitems}
+  }
+  {Senior Software Engineer - Hyper-V Virtualization Infrastructure Services Team} % Job title 2
+  {Jan. 2022 - Present} % Date(s) for Job title 2
+  {
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+      \item {
+        Implemented Hyper-V virtualization stack support for Virtualization
+        Infrastructure Driver (VID.sys) runtime reload during an Ultralite Virtual
+        Machine Preserving Host Update (VM-PHU) with Handle Brokering, which enables
+        VID.sys to be runtime reloaded during a VM-PHU without requiring a host
+        reboot or storage/network I/O drain, which are known bottlenecks.
+      }
+      \item {
+        Contributed to the design and implementation of Virtual Processor (VP) Auto
+        Suspend for VM-PHU, which defers VP suspend to the Windows Hypervisor until
+        the arrival of root partition intercepts, thereby minimizing VM compute
+        blackout during VM-PHU and enabling Hyper-V virtualization stack components
+        to be serviced on the host while VMs are still running.
+      }
+    \end{cvitems}
+  }
 
   \cventry
     {Compiler Optimization Developer (Intern)} % Job title
