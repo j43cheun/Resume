@@ -35,10 +35,11 @@ python3 scripts/validate_ats.py resume.pdf
 Pass `--max-pages N` to allow more than one page.
 
 ### Personal Contact Info
-Since this repo is public, a fresh checkout (including CI) builds with a
-placeholder email and phone number rather than real contact info. To build a
-copy with your real details for job applications, copy the example file and
-fill it in — it's gitignored, so it never gets committed:
+Since this repo is public, a fresh checkout (including CI, and the copy linked
+from LinkedIn) builds with a placeholder email and no phone number, rather than
+real contact info. To build a copy with your real details for job
+applications, copy the example file and fill it in — it's gitignored, so it
+never gets committed:
 ```bash
 cp resume/personal-info.tex.example resume/personal-info.tex
 # then edit resume/personal-info.tex with your real phone number and email
