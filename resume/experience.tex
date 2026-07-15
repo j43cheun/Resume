@@ -19,15 +19,14 @@
       \item {
         Optimized Storage Spaces Repair (i.e., RAID resilvering) by enhancing Storage
         Spaces metadata to track stale logical data copies at stripe granularity
-        (i.e., 256 KiB) vs. extent granularity (i.e., 256 MiB) previously, which
-        reduced the run time of Storage Spaces Repair from hours to minutes.
+        (i.e., 256 KiB) vs. extent granularity (i.e., 1 GiB) previously, which
+        reduced its run time from hours to minutes for multi-terabyte Storage Spaces.
       }
       \item {
-        Implemented Storage Spaces support for configuring, deploying, and managing
-        Storage Spaces with node-mirrored mirror and node-mirrored parity multilevel
-        resiliency settings on 2-node Storage Spaces Direct (S2D) Failover Clusters,
-        which enables Storage Spaces on 2-node S2D Failover Clusters to tolerate 1
-        node + 1 drive failures vs. 1 node failure previously.
+        Implemented Storage Spaces support for node-mirrored mirror and node-mirrored
+        parity multilevel resiliency on 2-node Storage Spaces Direct (S2D) Failover
+        Clusters, enabling them to tolerate 1 node + 1 drive failure versus 1 node
+        failure previously.
       }
       \item {
         Designed and implemented an extra-resilient cache for staging writes to
@@ -37,23 +36,29 @@
       }
     \end{cvitems}
   }
-  {Senior Software Engineer - Hyper-V Virtualization Infrastructure Services Team} % Job title 2
+  {Senior Software Engineer - Hyper-V Modern Virtualization Team} % Job title 2
   {Jan. 2022 - Present} % Date(s) for Job title 2
   {
     \begin{cvitems} % Description(s) of tasks/responsibilities
       \item {
         Implemented Hyper-V virtualization stack support for Virtualization
-        Infrastructure Driver (VID.sys) runtime reload during an Ultralite Virtual
-        Machine Preserving Host Update (VM-PHU) with Handle Brokering, which enables
-        VID.sys to be runtime reloaded during a VM-PHU without requiring a host
-        reboot or storage/network I/O drain, which are known bottlenecks.
+        Infrastructure Driver (VID.sys) runtime reload during VM Preserving Host
+        Update (VM-PHU) Ultralite with Handle Brokering, which enables VID.sys to be
+        runtime reloaded during VM-PHU Ultralite without draining I/O.
       }
       \item {
         Contributed to the design and implementation of Virtual Processor (VP) Auto
-        Suspend for VM-PHU, which defers VP suspend to the Windows Hypervisor until
+        Suspend for VM-PHU, which defers VP explicit suspend to the Microsoft Hypervisor until
         the arrival of root partition intercepts, thereby minimizing VM compute
-        blackout during VM-PHU and enabling Hyper-V virtualization stack components
-        to be serviced on the host while VMs are still running.
+        blackout during host servicing and enabling Hyper-V virtualization stack
+        components to be serviced on the host while VPs are still running.
+      }
+      \item {
+        Provisioned Azure Host OS media with slipstreamed software updates, enabling
+        inner-loop test coverage for VM-PHU Self upgrades from down-level to
+        active-branch builds and, more broadly, validation of changes against Azure's
+        actual OS composition locally — previously only possible in Azure itself due
+        to the complexity of replicating that composition on lab machines.
       }
     \end{cvitems}
   }
@@ -66,34 +71,15 @@
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
         \item {
-          Assisted with the implementation of a translator for translating LLVM IR to
-          the intermediate representation used by IBM's XL C/C++/Fortran compiler.
+          Implemented portions of a translator from LLVM IR to Wcode, IBM's internal
+          compiler intermediate representation, to evaluate whether an LLVM-based
+          frontend could target IBM's XL C/C++/Fortran compiler's backend and
+          optimizer.
         }
         \item {
-          Expanded test coverage for IBM's LLVM IR translator by writing a program in
-          C/C++ to spoof IBM's XL C/C++/Fortran compiler test drivers so that its test
-          buckets could be reused for validating IBM's LLVM IR translator.
-        }
-      \end{cvitems}
-    }
-
-  \cventry
-    {Operations Technology Developer (Intern)} % Job title
-    {Citigroup Inc.} % Organization
-    {Mississauga, ON, Canada} % Location
-    {Sep. 2013 - Dec. 2013} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {
-          Automated a bookkeeping workflow at Citigroup by writing a program in Java to
-          periodically scrape financial data from an internal website using Selenium
-          and format the data to Excel, which saved a bookkeeper over an hour per day
-          otherwise spent doing manual data entry.
-        }
-        \item {
-          Implemented automated tests for Citigroup's Global Stock Record
-          (GSR) web frontend using Java and Selenium to reduce reliance on manual
-          testing.
+          Expanded test coverage for the LLVM IR translator by writing a C/C++ shim
+          that emulated the test drivers of IBM's XL C/C++/Fortran compiler, allowing
+          existing test buckets to be reused for validation.
         }
       \end{cvitems}
     }
@@ -106,10 +92,9 @@
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
         \item {
-          Ported Nav Canada's air traffic control software build distribution tool from
-          HP-UX to Red Hat Enterprise Linux with a Java ICEFaces web frontend, which
-          simplified the air traffic control software build distribution workflow by
-          automating steps that were previously performed manually.
+          Ported Nav Canada's build distribution tool for air traffic control software
+          from HP-UX to Red Hat Enterprise Linux with a Java ICEFaces web frontend,
+          replacing a complex, largely manual process with an automated one.
         }
       \end{cvitems}
     }

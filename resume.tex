@@ -20,8 +20,27 @@
 % A4 paper size by default, use 'letterpaper' for US letter
 \documentclass[11pt, letter]{awesome-cv}
 
+% xdvipdfmx embeds this template's CID-keyed OpenType text (via fontspec) without
+% any actual space glyph in the content stream — word gaps are pure TJ-array
+% position adjustments (confirmed: the font's CID map has zero CIDs mapped to
+% U+0020), and paragraph-mode text keeps each word as its own glyph run even with
+% \XeTeXinterwordspaceshaping=2 (tried; only merges runs inside single-line boxes
+% that never had a line-break opportunity, e.g. entry titles, not multi-line
+% bullets). This appears to be inherent to how XeLaTeX ships out justified/ragged
+% paragraphs with embedded OpenType fonts, not something fixable from the .tex
+% side. \XeTeXgenerateactualtext=1 is kept since it's a harmless, real
+% improvement for copy/paste and in-PDF search fidelity.
+%
+% The actual fix for text-extraction robustness lives in
+% scripts/validate_ats.py: it now reads pdftotext's default (layout-reconstructed)
+% output instead of -raw, which infers word boundaries from glyph geometry across
+% the whole line rather than trusting the size of a single TJ-array number, and
+% agrees with pdfminer.six's independent geometric reconstruction. See that file
+% for details.
+\XeTeXgenerateactualtext=1
+
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=.6cm, right=1.4cm, bottom=1.0cm, footskip=.5cm}
 
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
@@ -51,12 +70,21 @@
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[rectangle,edge,right]{./examples/profile}
+
+% Real contact info (phone number, non-placeholder email) for job-application builds
+% lives in resume/personal-info.tex, which is gitignored and never committed to this
+% public repo. If that file isn't present (e.g. in CI, or a fresh clone), these
+% placeholder defaults are used instead.
+\newcommand{\resumemobile}{425-555-0100}
+\newcommand{\resumeemail}{j43cheun@uwaterloo.ca}
+\IfFileExists{resume/personal-info.tex}{\input{resume/personal-info.tex}}{}
+
 \name{Justin}{Cheung}
 \position{Senior Software Engineer}
 \address{Redmond, WA, USA}
 
-%\mobile{TODO}
-\email{j43cheun@uwaterloo.ca}
+\mobile{\resumemobile}
+\email{\resumeemail}
 %\dateofbirth{January 1st, 1970}
 %\homepage{j43cheun.github.io}
 \github{j43cheun}

@@ -3,12 +3,18 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: texlive/texlive:TL2023-historic
+    container: texlive/texlive:TL2026-historic
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
     - name: Compile
       run: xelatex resume.tex
+    - name: Install ATS validation dependencies
+      run: |
+        apt-get update
+        apt-get install -y --no-install-recommends poppler-utils python3
+    - name: Validate ATS compliance
+      run: python3 scripts/validate_ats.py resume.pdf
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
