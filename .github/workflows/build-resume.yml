@@ -3,7 +3,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: texlive/texlive:TL2026-historic
+    container: texlive/texlive:TL2025-historic
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
