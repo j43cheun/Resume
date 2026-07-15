@@ -73,9 +73,10 @@
 
 % Real contact info (phone number, non-placeholder email) for job-application builds
 % lives in resume/personal-info.tex, which is gitignored and never committed to this
-% public repo. If that file isn't present (e.g. in CI, or a fresh clone), these
-% placeholder defaults are used instead.
-\newcommand{\resumemobile}{425-555-0100}
+% public repo. If that file isn't present (e.g. in CI, a fresh clone, or the public
+% build linked from LinkedIn), the phone number is omitted entirely rather than
+% shown as a placeholder — \resumemobile is only defined if personal-info.tex
+% defines it. The email keeps a placeholder default since \email is not optional.
 \newcommand{\resumeemail}{j43cheun@uwaterloo.ca}
 \IfFileExists{resume/personal-info.tex}{\input{resume/personal-info.tex}}{}
 
@@ -83,7 +84,7 @@
 \position{Senior Software Engineer}
 \address{Redmond, WA, USA}
 
-\mobile{\resumemobile}
+\ifdefined\resumemobile\mobile{\resumemobile}\fi
 \email{\resumeemail}
 %\dateofbirth{January 1st, 1970}
 %\homepage{j43cheun.github.io}
