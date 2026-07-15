@@ -1,8 +1,7 @@
 % Copy this file to resume/personal-info.tex (which is gitignored) and fill in your
 % real contact info. That file is only used for builds you submit to job applications;
-% it's never committed, so the public repo always falls back to the placeholder email
-% and a fictional 425-555-0100 phone number (the NANPA-reserved range for
-% entertainment/placeholder use).
+% it's never committed, so the public repo (and the build linked from LinkedIn) always
+% falls back to the placeholder email and omits the phone number entirely.
 
-\renewcommand{\resumemobile}{+1-555-123-4567}
+\newcommand{\resumemobile}{+1-555-123-4567}
 \renewcommand{\resumeemail}{real.address@example.com}
