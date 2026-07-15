@@ -22,3 +22,7 @@
 ## Mac OS X metadata files:
 *.DS_Store
 
+### Personal ###
+## Real contact info for job-application builds; never committed to this public repo.
+resume/personal-info.tex
+
